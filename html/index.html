@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>qchat</title>
+<meta charset="utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="stylesheet" href="index.css" />
+<script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+</head>
+<body>
+<div class="block">
+	当前共有{{online}}人在线。
+</div>
+<div class="block">
+	你的昵称：<input type="text" id="nickname" value="{{nickname}}" />
+</div>
+<div class="black select-sex">
+	性别：
+	<img src="img/male.gif" title="male" class="selected">
+	<img src="img/female.gif" title="female">
+</div>
+<div class="block">
+	说点神马：
+	<input type="text" id="say" value="{{say}}" />
+	<button id="come">开始</button>
+</div>
+</body>
+<script src="index.js"></script>
+<script>
+var sex = '{{sex}}'.toLowerCase();
+if (sex == 'female') {
+	$('.select-sex img').removeClass('selected');
+	$('.select-sex img[title=female]').addClass('selected');
+}
+</script>
+</html>

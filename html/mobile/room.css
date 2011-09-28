@@ -1,0 +1,54 @@
+html { font-size: 62.5%;} 
+body {
+	width: 300px;
+	margin: auto;
+	font-size: 1.6rem;
+}
+/* ต๗สิ */
+@media screen and (min-width: 800px) {
+	body {
+		border: 1px solid #0087A0;
+		padding: 10px;
+	}
+}
+
+#connecting .wrap {
+	padding-top: 200px;
+	text-align: center;
+	font-size: 2rem;
+}
+
+.line {
+	margin: 1rem 0.4rem;
+	padding: 1rem 0.4rem;
+	border-radius: 0.8rem;
+	box-shadow: 1px 2px 10px #B0D5FF;
+}
+.line .message-header {
+	padding-bottom: 0.8rem;
+}
+.line .message-from {
+	font-weight: bold;
+	color: #00781E;
+	padding-right: 2.0rem;
+}
+.line .message-timestamp {
+	color: #989898;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+.line .message-text {
+	font-size: 1.4rem;
+}
+.type-error {
+	background-color: #FFECE4;
+}
+.type-own {
+	background-color: #F3FFF0;
+}
+.type-system {
+	background-color: #FFECE4;
+}
+.type-private {
+	background-color: #ECF3FF;
+}
