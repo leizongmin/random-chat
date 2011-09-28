@@ -45,6 +45,16 @@ room.chatWith = function (n) {
 	});
 }
 
+/** 断开与当前连接 */
+room.closeChat = function () {
+	socket.emit('close chat', function (ok) {
+		if (!ok)
+			room.showMessage('系统', '操作失败！', 'error');
+		else
+			room.showMessage('系统', '已断开当前连接。你可以等待别人连接你，或者点[换人]按钮主动出击。', 'system');
+	});
+}
+
 /** 显示一条消息 */
 room.showMessage = function (from, msg, type) {
 	var from = room.formatMessage(from);

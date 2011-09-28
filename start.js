@@ -34,8 +34,8 @@ var s = web.create(80);
 io = io.listen(s);
 io.set('transports', ['htmlfile', 'xhr-polling', 'jsonp-polling']);
 // 注册房间
-new RandomRoom('random', io);
-
+var room = new RandomRoom('random', io);
+global.room = room;
 
 /* 日志输出 */
 web.setLogLevel(3);

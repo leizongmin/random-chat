@@ -8,7 +8,7 @@ socket.on('connect', function () {
 	$('.room #connecting').fadeOut();
 	$('.room #chat').fadeIn();
 	room.clearMessage();
-	room.showMessage('系统', '已进入房间!输入 $help 查看使用帮助', 'system');
+	room.findPeople();
 });
 
 /** 出错 */
