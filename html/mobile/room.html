@@ -18,15 +18,24 @@
 		<div class="wrap">正在连接...<br><img src="img/loader.gif"></div>
 	</div>
 	
+	<!-- 表情选择 -->
+	<div id="face-list">
+		<img src="face/b/1.gif" tag="b/1" class="face-img">
+		<img src="face/b/2.gif" tag="b/2" class="face-img">
+		<img src="face/b/3.gif" tag="b/3" class="face-img">
+		<img src="face/b/4.gif" tag="b/4" class="face-img">
+	</div>
+	
 	<!-- 发送消息区域 -->
-		<div id="send-message">
-			<input id="message">
-			<button onclick="room.sendMessage()">发送</button>
-			<button onclick="room.findPeople()">换人</button>
-			<button onclick="room.closeChat()">关闭当前</button>
-			<button onclick="room.clearMessage()">清空</button>
-			<a href="/">返回首页</a>
-		</div>
+	<div id="send-message">
+		<input id="message">
+		<button onclick="room.sendMessage()">发送</button>
+		<button onclick="face.show()">表情</button>
+		<button onclick="room.findPeople()">换人</button>
+		<button onclick="room.closeChat()">关闭当前</button>
+		<button onclick="room.clearMessage()">清空</button>
+		<a href="/">返回首页</a>
+	</div>
 		
 	<!-- 主界面 -->
 	<div id="chat">
@@ -54,3 +63,4 @@
 <script src="/mobile/room.js"></script>
 <script src="/mobile/room.op.js"></script>
 <script src="/mobile/room.event.js"></script>
+<script src="/mobile/face.js"></script>

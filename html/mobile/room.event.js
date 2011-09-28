@@ -6,6 +6,7 @@
 /** 连接成功 */
 socket.on('connect', function () {
 	$('.room #connecting').fadeOut();
+	$('.room #send-message').fadeIn();
 	$('.room #chat').fadeIn();
 	room.clearMessage();
 	room.findPeople();

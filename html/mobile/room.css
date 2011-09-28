@@ -13,9 +13,13 @@ body {
 }
 
 #connecting .wrap {
-	padding-top: 200px;
+	padding-top: 10rem;
 	text-align: center;
 	font-size: 2rem;
+}
+
+#send-message, #chat {
+	display: none;
 }
 
 .line {
@@ -46,9 +50,21 @@ body {
 .type-own {
 	background-color: #F3FFF0;
 }
+.type-own .message-header {
+	text-align: right;
+}
 .type-system {
 	background-color: #FFECE4;
 }
 .type-private {
 	background-color: #ECF3FF;
+}
+
+#face-list {
+	background-color: #FFF;
+	box-shadow: 1px 2px 10px #B0D5FF;
+	display: none;
+}
+.face-img {
+	padding: 8px;
 }

@@ -100,7 +100,9 @@ room.formatMessage = function (html) {
 		// 图片
 		.replace(/!((http|ftp|https|file):\/\/([\w\-]+\.)+[\w\-]+(\/[\w\-\.\/?\@\%\!\&=\+\~\:\#\;\,]*)?)/ig, '<img src="$1">')
 		// 粗体字
-		.replace(/[\*]{2}([^\*]+)[\*]{2}/gi, '<b>$1</b>');
+		.replace(/[\*]{2}([^\*]+)[\*]{2}/gi, '<b>$1</b>')
+		// 表情
+		.replace(/\[!([\w\d\-\.\/?\@\%\!\&=\+\~\:\#\;\,]+)\]/gi, '<img src="/face/$1.gif">');
 	return html;
 }
 
