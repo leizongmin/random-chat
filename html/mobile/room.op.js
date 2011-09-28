@@ -89,14 +89,18 @@ room.clearInput = function () {
 
 /** 格式化消息 */ 
 room.formatMessage = function (html) {
-	html = html.replace(/</g, '&lt;')
+	html = html
+		// 过滤HTML标签
+		.replace(/</g, '&lt;')
 		.replace(/>/g, '&gt;')
+		// 换行
 		.replace(/\n/g, '<br>')
-		.replace(/(@[\u4e00-\u9fa5\w\-]+)/gi, '<a href="#" onclick="room.writePrivateMessage(\'$1\');">$1</a>')
+		// 网址链接
 		.replace(/\[((http|ftp|https|file):\/\/([\w\-]+\.)+[\w\-]+(\/[\w\-\.\/?\@\%\!\&=\+\~\:\#\;\,]*)?)\]/ig, '<a href="$1" target="_blank">$1</a>')
+		// 图片
 		.replace(/!((http|ftp|https|file):\/\/([\w\-]+\.)+[\w\-]+(\/[\w\-\.\/?\@\%\!\&=\+\~\:\#\;\,]*)?)/ig, '<img src="$1">')
-		.replace(/[\*]{2}([^\*]+)[\*]{2}/gi, '<b>$1</b>')
-		.replace(/_([^_]+)_/gi, '<i>$1</i>');
+		// 粗体字
+		.replace(/[\*]{2}([^\*]+)[\*]{2}/gi, '<b>$1</b>');
 	return html;
 }
 

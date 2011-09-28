@@ -23,8 +23,9 @@ socket.on('public message', function (from, msg) {
 });
 
 /** 接收到私人信息 */
-socket.on('private message', function (from, msg) {
-	room.showMessage(from, msg, 'private');
+socket.on('private message', function (from, msg, sex) {
+	var s = sex == 'male' ? '基友' : '妹纸';
+	room.showMessage(from + '(' + s + ')', msg, 'private');
 });
 
 /** 接收到系统信息 */
