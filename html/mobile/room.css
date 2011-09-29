@@ -1,29 +1,29 @@
 html { font-size: 62.5%;} 
 body {
-	width: 300px;
+	width: 30rem;
 	margin: auto;
 	font-size: 1.6rem;
 }
 /* ต๗สิ */
 @media screen and (min-width: 800px) {
 	body {
-		border: 1px solid #0087A0;
-		padding: 10px;
-		min-height: 500px;
+		border: 0.1rem solid #0087A0;
+		padding: 1rem;
+		min-height: 50rem;
 	}
 }
 input {
-	border: 2px solid #0087A0;
+	border: 0.2rem solid #0087A0;
 	clear: both;
-	padding: 4px;
+	padding: 0.4rem;
 }
 button {
 	font-size: 1.8rem;
 	font-weight: bold;
 	background-color: #0087BC;
 	color: white;
-	border-radius: 6px;
-	border: 2px solid #FFCAB8;
+	border-radius: 0.6rem;
+	border: 0.2rem solid #FFCAB8;
 }
 #send-message, #chat {
 	display: none;
@@ -49,7 +49,7 @@ button {
 	margin: 1rem 0.4rem;
 	padding: 1rem 0.4rem;
 	border-radius: 0.8rem;
-	box-shadow: 1px 2px 10px #B0D5FF;
+	box-shadow: 0.1rem 0.2rem 1rem #B0D5FF;
 }
 .line .message-header {
 	padding-bottom: 0.8rem;
@@ -86,7 +86,7 @@ button {
 
 #face-list {
 	background-color: #FFF;
-	box-shadow: 1px 2px 10px #B0D5FF;
+	box-shadow: 0.1rem 0.2rem 1rem #B0D5FF;
 	display: none;
 }
 .face-img {

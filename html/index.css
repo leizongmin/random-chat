@@ -1,38 +1,63 @@
 html { font-size: 62.5%;} 
 body {
-	width: 300px;
+	width: 30rem;
 	margin: auto;
-	font-size: 1.6rem;
+	font-size: 2rem;
 	background-color: #ECF3FF;
 }
 /* 调试 */
 @media screen and (min-width: 800px) {
 	body {
-		border: 1px solid #0087A0;
-		padding: 10px;
+		border: 0.1rem solid #0087A0;
+		padding: 1rem;
 	}
 }
 input {
-	border: 2px solid #0087A0;
+	border: 0.2rem solid #0087A0;
 	clear: both;
 	width: 100%;
-	padding: 4px;
+	padding: 0.4rem;
+	font-size: 2rem;
 }
 button {
-	padding: 4px 10px;
+	padding: 0.6rem 1rem;
 	background-color: #0087A0;
-	border: 2px solid #0087A0;
+	border: 0.2rem solid #0087A0;
 	color: white;
 	font-weight: bold;
-	border-radius: 6px;
+	border-radius: 0.6rem;
+	font-size: 2rem;
 }
 .block {
-	padding: 10px 0px;
+	padding: 1rem 0rem;
 }
 .selected {
-	border: 3px solid #FFAA84;
+	border: 0.3rem solid #FFAA84;
 }
 .select-sex img {
-	max-height: 80px;
-	max-width: 80px;
+	height: 8rem;
+	width: 8rem;
+}
+
+.title {
+	color: #00781E;
+	font-weight: bold;
+	font-size: 2rem;
+	padding-top: 1rem;
+	padding-bottom: 0.4rem;
+}
+.count {
+	font-size: 3rem;
+	font-weight: bold;
+	color: #C01E00;
+}
+.copyright {
+	margin: 1rem 0.4rem;
+	padding: 1rem 0.4rem;
+	border-radius: 0.8rem;
+	box-shadow: 0.1rem 0.2rem 1rem #B0D5FF;
+	background-color: #ECF3FF;
+	color: #686868;
+	font-weight: bold;
+	font-style: italic;
 }

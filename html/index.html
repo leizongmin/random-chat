@@ -12,21 +12,27 @@
 </head>
 <body>
 <div class="block">
-	当前共有{{online}}人在线。<br>
-	{{male}}个基友，{{female}}个妹纸正闲着
+	当前共有<span class="count">{{online}}</span>人在线。<br>
+	<span class="count">{{male}}</span>个男银，<span class="count">{{female}}</span>个妹纸正闲着
 </div>
 <div class="block">
-	你的昵称：<input type="text" id="nickname" value="{{nickname}}" />
+	<div class="title">你的昵称：</div>
+	<input type="text" id="nickname" value="{{nickname}}" />
 </div>
 <div class="black select-sex">
-	你是基友还是妹纸：<br>
+	<div class="title">你的性别：</div>
 	<img src="img/male.gif" title="male" class="selected">
 	<img src="img/female.gif" title="female">
 </div>
 <div class="block">
-	想跟对方说点神马：
+	<div class="title">想跟对方说点神马：</div>
 	<input type="text" id="say" value="{{say}}" />
 	<button id="come">开始</button>
+</div>
+
+<!-- 声明 -->
+<div class="copyright">
+	Power by 老雷 leizongmin@gmail.com
 </div>
 </body>
 <script src="index.js"></script>
