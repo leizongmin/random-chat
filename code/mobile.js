@@ -18,7 +18,7 @@ exports.get = exports.post = function (server, request, response) {
 			server.session.sex = sex;
 		if (typeof say != 'undefined')
 			server.session.say = say;
-		server.sessionObject.update();
+		server.sessionUpdate();
 		
 		// 输出页面
 		response.renderFile('mobile/room.html', {}, 'text/html');

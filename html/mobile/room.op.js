@@ -20,7 +20,7 @@ room.sendPrivateMessage = function (msg) {
 			room.clearInput();
 		}
 		else {
-			room.showMessage('我', '刚才发送的消息“' + msg + '”不成功！' , 'error');
+			room.showMessage('系统', '[!b/4]刚才发送的消息“' + msg + '”不成功！' , 'error');
 		}
 	});		
 }
@@ -29,7 +29,7 @@ room.sendPrivateMessage = function (msg) {
 room.findPeople = function () {
 	socket.emit('find partner', function (n) {
 		if (n == false)
-			room.showMessage('系统', '暂时没有找到其他人，请稍候再试。', 'system');
+			room.showMessage('系统', '暂时没有找到其他人，请稍候再试。[!b/10]', 'system');
 		else {
 			room.chatWith(n);
 		}
@@ -38,10 +38,10 @@ room.findPeople = function () {
 
 /** 与某人连接 */
 room.chatWith = function (n) {
-	console.log('准备与"' + n + '"建立连接...');
+	// console.log('准备与"' + n + '"建立连接...');
 	socket.emit('chat with', n, function (ok) {
 		if (!ok)
-			room.showMessage('系统', '与' + n + '连接失败！', 'error');
+			room.showMessage('系统', '与**' + n + '**连接失败！[!b/4]', 'error');
 	});
 }
 
@@ -51,12 +51,12 @@ room.closeChat = function () {
 		if (!ok)
 			room.showMessage('系统', '操作失败！', 'error');
 		else
-			room.showMessage('系统', '已断开当前连接。你可以等待别人连接你，或者点[换人]按钮主动出击。', 'system');
+			room.showMessage('系统', 'OK！现在你可以等待别人连接你，或者点[**换人**]按钮主动出击。[!b/10]', 'system');
 	});
 }
 
 /** 显示一条消息 */
-room.showMessage = function (from, msg, type) {
+room.showMessage = function (from, msg, type, sex) {
 	var from = room.formatMessage(from);
 	var msg = room.formatMessage(msg);
 	if (!type)
@@ -65,7 +65,10 @@ room.showMessage = function (from, msg, type) {
 		type = 'type-' + type;
 	var html = '\
 <div class="line ' + type + '">\
-	<div class="message-header">\
+	<div class="message-header">'
+	if (typeof sex != 'undefined')
+		html += '<img class="sex-icon" src="img/' + sex + '_i.gif">';
+	html +='\
 		<span class="message-from">' + from + '</span>\
 		<span class="message-timestamp">' + time2str() + '</span>\
 	</div>\
@@ -115,4 +118,9 @@ var time2str = function (now) {
 	var s = date.getUTCSeconds();
 	var time = date.getUTCHours() + ':' + (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
 	return time;
+}
+
+/** 显示操作菜单 */
+room.showMenu = function () {
+	$('#menu').slideToggle();
 }

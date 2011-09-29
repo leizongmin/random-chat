@@ -29,12 +29,18 @@
 	<!-- 发送消息区域 -->
 	<div id="send-message">
 		<input id="message">
-		<button onclick="room.sendMessage()">发送</button>
-		<button onclick="face.show()">表情</button>
-		<button onclick="room.findPeople()">换人</button>
-		<button onclick="room.closeChat()">关闭当前</button>
-		<button onclick="room.clearMessage()">清空</button>
-		<a href="/">返回首页</a>
+		<button style="float:left;" onclick="face.show()">表情</button>
+		<button style="float:right;" onclick="room.sendMessage()">发送</button>
+		<button style="margin: 0rem 1.2rem;" onclick="room.showMenu()">操作</button>
+		<div style="clear:both;"></div>
+	</div>
+	
+	<!-- 操作菜单 -->
+	<div id="menu">
+		<button onclick="room.findPeople(); room.showMenu();">换其他人</button>
+		<button onclick="room.closeChat(); room.showMenu();">不和Ta聊</button>
+		<button onclick="room.clearMessage(); room.showMenu();">清空消息</button>
+		<button onclick="window.location = '/'; room.showMenu();">返回首页</button>
 	</div>
 		
 	<!-- 主界面 -->

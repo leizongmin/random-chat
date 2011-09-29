@@ -25,8 +25,7 @@ socket.on('public message', function (from, msg) {
 
 /** 接收到私人信息 */
 socket.on('private message', function (from, msg, sex) {
-	var s = sex == 'male' ? '基友' : '妹纸';
-	room.showMessage(from + '(' + s + ')', msg, 'private');
+	room.showMessage(from, msg, 'private', sex);
 });
 
 /** 接收到系统信息 */
@@ -36,5 +35,5 @@ socket.on('system message', function (msg) {
 
 /** 与其聊天的人离开了 */
 socket.on('partner left', function (nickname) {
-	room.showMessage('系统', nickname + '离开了。', 'error');
+	room.showMessage('系统', '**' + nickname + '**离开了。', 'error');
 });

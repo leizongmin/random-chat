@@ -9,19 +9,42 @@ body {
 	body {
 		border: 1px solid #0087A0;
 		padding: 10px;
+		min-height: 500px;
 	}
 }
-
+input {
+	border: 2px solid #0087A0;
+	clear: both;
+	padding: 4px;
+}
+button {
+	font-size: 1.8rem;
+	font-weight: bold;
+	background-color: #0087BC;
+	color: white;
+	border-radius: 6px;
+	border: 2px solid #FFCAB8;
+}
+#send-message, #chat {
+	display: none;
+}
 #connecting .wrap {
 	padding-top: 10rem;
 	text-align: center;
 	font-size: 2rem;
 }
 
-#send-message, #chat {
-	display: none;
+#message {
+	width: 29rem;
+	font-size: 2rem;
+}
+#send-message button {
+	width: 9rem;
+	height: 4rem;
 }
 
+#messages {
+}
 .line {
 	margin: 1rem 0.4rem;
 	padding: 1rem 0.4rem;
@@ -35,14 +58,15 @@ body {
 	font-weight: bold;
 	color: #00781E;
 	padding-right: 2.0rem;
+	font-size: 2rem;
 }
 .line .message-timestamp {
 	color: #989898;
 	font-weight: bold;
-	font-size: 1.2rem;
+	font-size: 1.6rem;
 }
 .line .message-text {
-	font-size: 1.4rem;
+	font-size: 2rem;
 }
 .type-error {
 	background-color: #FFECE4;
@@ -66,5 +90,20 @@ body {
 	display: none;
 }
 .face-img {
-	padding: 8px;
+	padding: 0.8rem;
+}
+.sex-icon {
+	max-height: 4rem;
+	max-width: 4rem;
+	float: right;
+}
+
+#menu {
+	display: none;
+	margin-top: 3rem;
+}
+#menu button {
+	width: 19rem;
+	height: 4.5rem;
+	margin: 1rem 4.5rem;
 }

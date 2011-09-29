@@ -3,6 +3,7 @@ body {
 	width: 300px;
 	margin: auto;
 	font-size: 1.6rem;
+	background-color: #ECF3FF;
 }
 /* 调试 */
 @media screen and (min-width: 800px) {
