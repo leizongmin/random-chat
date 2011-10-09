@@ -1,6 +1,6 @@
 html { font-size: 62.5%;} 
 body {
-	width: 30rem;
+	/* width: 30rem; */
 	margin: auto;
 	font-size: 1.6rem;
 }
@@ -12,22 +12,7 @@ body {
 		min-height: 50rem;
 	}
 }
-input {
-	border: 0.2rem solid #0087A0;
-	clear: both;
-	padding: 0.4rem;
-}
-button {
-	font-size: 1.8rem;
-	font-weight: bold;
-	background-color: #0087BC;
-	color: white;
-	border-radius: 0.6rem;
-	border: 0.2rem solid #FFCAB8;
-}
-#send-message, #chat {
-	display: none;
-}
+
 #connecting .wrap {
 	padding-top: 10rem;
 	text-align: center;
@@ -38,13 +23,10 @@ button {
 	width: 29rem;
 	font-size: 2rem;
 }
-#send-message button {
-	width: 9rem;
-	height: 4rem;
+#messages {
+	
 }
 
-#messages {
-}
 .line {
 	margin: 1rem 0.4rem;
 	padding: 1rem 0.4rem;
@@ -86,8 +68,6 @@ button {
 
 #face-list {
 	background-color: #FFF;
-	box-shadow: 0.1rem 0.2rem 1rem #B0D5FF;
-	display: none;
 }
 .face-img {
 	padding: 0.8rem;
@@ -96,14 +76,4 @@ button {
 	max-height: 4rem;
 	max-width: 4rem;
 	float: right;
-}
-
-#menu {
-	display: none;
-	margin-top: 3rem;
-}
-#menu button {
-	width: 19rem;
-	height: 4.5rem;
-	margin: 1rem 4.5rem;
 }

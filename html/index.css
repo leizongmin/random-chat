@@ -1,6 +1,5 @@
 html { font-size: 62.5%;} 
 body {
-	width: 30rem;
 	margin: auto;
 	font-size: 2rem;
 	background-color: #ECF3FF;
@@ -11,22 +10,6 @@ body {
 		border: 0.1rem solid #0087A0;
 		padding: 1rem;
 	}
-}
-input {
-	border: 0.2rem solid #0087A0;
-	clear: both;
-	width: 100%;
-	padding: 0.4rem;
-	font-size: 2rem;
-}
-button {
-	padding: 0.6rem 1rem;
-	background-color: #0087A0;
-	border: 0.2rem solid #0087A0;
-	color: white;
-	font-weight: bold;
-	border-radius: 0.6rem;
-	font-size: 2rem;
 }
 .block {
 	padding: 1rem 0rem;
@@ -54,9 +37,6 @@ button {
 .copyright {
 	margin: 1rem 0.4rem;
 	padding: 1rem 0.4rem;
-	border-radius: 0.8rem;
-	box-shadow: 0.1rem 0.2rem 1rem #B0D5FF;
-	background-color: #ECF3FF;
 	color: #686868;
 	font-weight: bold;
 	font-style: italic;

@@ -1,62 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>聊天室</title>
-<meta charset="utf-8" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-<meta name="format-detection" content="telephone=no" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<link href="/mobile/room.css" rel="stylesheet">
-<script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
-<script src="/socket.io/socket.io.js"></script>
+	<title>聊天室</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<meta name="format-detection" content="telephone=no" />
+	<link href="/mobile/room.css" rel="stylesheet">
+	<!-- socket.io -->
+	<script src="/socket.io/socket.io.js"></script>
+	<!-- jQuery Mobile -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
 </head>
 <body>
-<div class="room">
+
 	<!-- 连接界面 -->
-	<div id="connecting">
-		<div class="wrap">正在连接...<br><img src="img/loader.gif"></div>
+	<div id="connecting" data-role="page" data-theme="d">
+		<div class="wrap">正在连接...
+		<br>
+		<img src="img/loader.gif"></div>
 	</div>
 	
 	<!-- 表情选择 -->
-	<div id="face-list">
-		<img src="face/b/1.gif" tag="b/1" class="face-img">
-		<img src="face/b/2.gif" tag="b/2" class="face-img">
-		<img src="face/b/3.gif" tag="b/3" class="face-img">
-		<img src="face/b/4.gif" tag="b/4" class="face-img">
-	</div>
-	
-	<!-- 发送消息区域 -->
-	<div id="send-message">
-		<input id="message">
-		<button style="float:left;" onclick="face.show()">表情</button>
-		<button style="float:right;" onclick="room.sendMessage()">发送</button>
-		<button style="margin: 0rem 1.2rem;" onclick="room.showMenu()">操作</button>
-		<div style="clear:both;"></div>
-	</div>
-	
-	<!-- 操作菜单 -->
-	<div id="menu">
-		<button onclick="room.findPeople(); room.showMenu();">换其他人</button>
-		<button onclick="room.closeChat(); room.showMenu();">不和Ta聊</button>
-		<button onclick="room.clearMessage(); room.showMenu();">清空消息</button>
-		<button onclick="window.location = '/'; room.showMenu();">返回首页</button>
+	<div id="face-list" data-role="page" data-theme="d">
+		<div data-role="header" data-theme="d">
+			<button data-icon="back" onclick="$.mobile.changePage('#chat');">取消</button>
+		</div>
+		<div data-role="content" data-theme="d">
+			<!--
+			<img src="face/b/1.gif" tag="b/1" class="face-img">
+			<img src="face/b/2.gif" tag="b/2" class="face-img">
+			<img src="face/b/3.gif" tag="b/3" class="face-img">
+			<img src="face/b/4.gif" tag="b/4" class="face-img">
+			-->
+		</div>
 	</div>
 		
 	<!-- 主界面 -->
-	<div id="chat">
-		<!-- 消息区域 -->
-		<div id="messages">
-			<div id="lines" class="scrollbar">
-				<div class="line">
-					<div class="message-header">
-						<span class="message-from">老雷</span>
-						<span class="message-timestamp">2011-12-31</span>
-					</div>
-					<div class="message-text">
-						这个是消息内容
+	<div id="chat" data-role="page" data-theme="d" data-fullscreen="true">
+		<div data-role="header" data-theme="d">
+			<!-- 发送消息区域 -->
+			<input id="message">
+			<div data-role="navbar" data-theme="d">
+				<ul>
+					<li><button data-icon="gear" onclick="$.mobile.changePage('#menu', 'pop')">操作</button></li>
+					<li><button data-icon="star" onclick="face.show()">表情</button></li>
+					<li><button data-icon="check" onclick="room.sendMessage()">发送</button></li>
+				</ul>
+			</div>
+		</div>
+	
+		<div data-role="content" data-theme="d">
+			<!-- 消息区域 -->
+			<div id="messages">
+				<div id="lines" class="scrollbar">
+					<div class="line">
+						<div class="message-header">
+							<span class="message-from">老雷</span>
+							<span class="message-timestamp">2011-12-31</span>
+						</div>
+						<div class="message-text">
+							这个是消息内容
+						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 操作菜单 -->
+	<div id="menu" data-role="page" data-theme="d">
+		<div data-role="header" data-theme="d">
+			<button data-icon="back" onclick="$.mobile.changePage('#chat');">取消</button>
+		</div>
+		
+		<div data-role="content" data-role="d">
+			<div data-role="controlgroup">
+				<button data-icon="grid" onclick="room.clearMessage(); $.mobile.changePage('#chat');">清空消息</button>
+				<button data-icon="back" onclick="room.findPeople(); $.mobile.changePage('#chat');">换人</button>
+				<button data-icon="delete" onclick="room.closeChat(); $.mobile.changePage('#chat');">不和Ta聊</button>
+				<button data-icon="home" onclick="window.location = '/';">返回首页</button>
 			</div>
 		</div>
 	</div>

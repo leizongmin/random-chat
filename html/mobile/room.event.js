@@ -5,9 +5,7 @@
 
 /** 连接成功 */
 socket.on('connect', function () {
-	$('.room #connecting').fadeOut();
-	$('.room #send-message').fadeIn();
-	$('.room #chat').fadeIn();
+	$.mobile.changePage('#chat')
 	room.clearMessage();
 	room.findPeople();
 });

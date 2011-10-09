@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>qchat</title>
-<meta charset="utf-8" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-<meta name="format-detection" content="telephone=no" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<link rel="stylesheet" href="index.css" />
-<script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+	<title>随机聊天</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="stylesheet" href="index.css" />
+	<!-- jQuery Mobile -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0rc1/jquery.mobile-1.0rc1.min.js"></script>
 </head>
 <body>
-<div class="block">
-	当前共有<span class="count">{{online}}</span>人在线。<br>
-	<span class="count">{{male}}</span>个男银，<span class="count">{{female}}</span>个妹纸正闲着
-</div>
-<div class="block">
-	<div class="title">你的昵称：</div>
-	<input type="text" id="nickname" value="{{nickname}}" />
-</div>
-<div class="black select-sex">
-	<div class="title">你的性别：</div>
-	<img src="img/male.gif" title="male" class="selected">
-	<img src="img/female.gif" title="female">
-</div>
-<div class="block">
-	<div class="title">想跟对方说点神马：</div>
-	<input type="text" id="say" value="{{say}}" />
-	<button id="come">开始</button>
+
+<div data-role="page" data-theme="d">
+	<div data-role="header" data-theme="d">
+		<div class="block">
+			当前共有<span class="count">{{online}}</span>人在线。<br>
+			<span class="count">{{male}}</span>个男银，<span class="count">{{female}}</span>个妹纸正闲着
+		</div>
+	</div>
+	<div data-role="content" data-theme="d">
+		<div class="block">
+			<div class="title">你的昵称：</div>
+			<input type="text" id="nickname" value="{{nickname}}" />
+		</div>
+		<div class="black select-sex">
+			<div class="title">你的性别：</div>
+			<img src="img/male.gif" title="male" class="selected">
+			<img src="img/female.gif" title="female">
+		</div>
+		<div class="block">
+			<div class="title">想跟对方说点神马：</div>
+			<input type="text" id="say" value="{{say}}" />
+			<button id="come">开始</button>
+		</div>
+	</div>
+	<div data-role="footer" data-theme="d">
+		<!-- 声明 -->
+		<div class="copyright">
+			Power by 老雷 leizongmin@gmail.com
+		</div>
+	</div>
 </div>
 
-<!-- 声明 -->
-<div class="copyright">
-	Power by 老雷 leizongmin@gmail.com
-</div>
 </body>
 <script src="index.js"></script>
 <script>

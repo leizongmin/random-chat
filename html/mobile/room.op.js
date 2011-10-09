@@ -119,8 +119,3 @@ var time2str = function (now) {
 	var time = date.getUTCHours() + ':' + (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
 	return time;
 }
-
-/** 显示操作菜单 */
-room.showMenu = function () {
-	$('#menu').slideToggle();
-}

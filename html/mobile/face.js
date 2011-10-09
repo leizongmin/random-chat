@@ -7,7 +7,7 @@ var face = {}
 
 /** 显示标签选择页面 */
 face.show = function () {
-	$('#face-list').slideToggle();
+	$.mobile.changePage('#face-list', 'none');
 }
 
 // 初始化表情
@@ -21,8 +21,7 @@ face.init = function () {
 	$('.face-img').click(function () {
 		$m = $('#message');
 		$m.val($m.val() + '[!' + $(this).attr('tag') + ']');
-		$('#face-list').slideUp();
-		$(document).scrollTop(0)
+		$.mobile.changePage('#chat', 'none');
 	});
 }
 face.init();
