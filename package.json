@@ -1,5 +1,5 @@
 {
-   "name":			"qchat",
+   "name":			"random-chat",
    "main":			"./start.js",
    "version":		"0.0.1",
    "description":	"A web random chat program.",
@@ -12,7 +12,7 @@
 		"node": ">= 0.4.7"
 	},
 	"dependencies":	{
-		"QuickWeb":		">=0.1.8",
+		"QuickWeb":		">=0.1.11",
 		"mustache":		"*",
 		"socket.io":	">=0.8.4"
 	}
