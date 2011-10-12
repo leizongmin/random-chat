@@ -1,15 +1,15 @@
 $(function () {
-	// Ñ¡ÔñÐÔ±ð
+	// é€‰æ‹©æ€§åˆ«
 	$('.select-sex img').click(function ()  {
 		$('.select-sex img').removeClass('selected');
 		$(this).addClass('selected');
 	});
 
-	// ½øÈë
+	// è¿›å…¥
 	$('#come').click(function () {
-		var nickname = $('#nickname').val().trim();					// êÇ³Æ
-		var say = $('#say').val().trim();								// ´òÕÐºôÄÚÈÝ
-		var sex = $('.select-sex .selected').attr('title').trim();	// ÐÔ±ð
+		var nickname = $('#nickname').val().trim();					// æ˜µç§°
+		var say = $('#say').val().trim();								// æ‰“æ‹›å‘¼å†…å®¹
+		var sex = $('.select-sex .selected').attr('title').trim();	// æ€§åˆ«
 		window.location = '/mobile?n=' + nickname + '&s=' + sex + '&say=' + say;
 	});
 });
