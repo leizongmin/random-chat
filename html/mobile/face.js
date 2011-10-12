@@ -10,12 +10,12 @@ face.show = function () {
 	$.mobile.changePage('#face-list', 'none');
 }
 
-// 初始化表情
+// 初始化表情选择窗口
 face.init = function () {
 	var html = '';
 	for (var i = 1; i <= 52; i++)
 		html += '<img src="face/b/' + i + '.gif" tag="b/' + i + '" class="face-img">';
-	$('#face-list').html(html);
+	$('#face-div').html(html);
 	
 	/** 选择表情 */
 	$('.face-img').click(function () {

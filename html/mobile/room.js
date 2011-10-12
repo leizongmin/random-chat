@@ -8,7 +8,10 @@ if (typeof room != 'object')
 	room = {} 
  
 // 连接到房间
-var socket = io.connect('/random');
+$(document).ready(function () {
+	window.socket = io.connect('/random');
+	socketConnectReady();
+});
 
 // 按回车发送
 var _last_input_message = '';
@@ -24,3 +27,6 @@ $('#message').keydown(function (e) {
 		$('#message').val(_last_input_message);
 	}
 });
+
+// jQuery Mobile效果
+$.mobile.defaultPageTransition = 'none';

@@ -44,6 +44,4 @@ web.setLogLevel(1);
 io.set('log level', 1);
 
 
-web.set('file_maxage_gif', 20);
-//web.set('file_maxage', 10);
 web.setLogLevel(3);

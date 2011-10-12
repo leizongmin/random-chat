@@ -77,7 +77,8 @@ room.showMessage = function (from, msg, type, sex) {
 	</div>\
 </div>';
 	$('#lines').prepend(html);
-	$('#lines').get(0).scrollTop = 10000000;
+	//$('#lines').get(0).scrollTop = 10000000;
+	$(document).scrollTop(0);
 }
 
 /** 清空所有消息 */

@@ -20,8 +20,7 @@ body {
 }
 
 #message {
-	width: 29rem;
-	font-size: 2rem;
+	width: 98%;
 }
 #messages {
 	
@@ -76,4 +75,9 @@ body {
 	max-height: 4rem;
 	max-width: 4rem;
 	float: right;
+}
+
+#sendbar {
+	position: fixed;
+	bottom: 0px;
 }

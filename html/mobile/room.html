@@ -4,7 +4,6 @@
 	<title>聊天室</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
-	<meta name="format-detection" content="telephone=no" />
 	<link href="/mobile/room.css" rel="stylesheet">
 	<!-- socket.io -->
 	<script src="/socket.io/socket.io.js"></script>
@@ -24,10 +23,10 @@
 	
 	<!-- 表情选择 -->
 	<div id="face-list" data-role="page" data-theme="d">
-		<div data-role="header" data-theme="d">
-			<button data-icon="back" onclick="$.mobile.changePage('#chat');">取消</button>
+		<div>
+			<button data-icon="back" onclick="$.mobile.changePage('#chat'); ">取消</button>
 		</div>
-		<div data-role="content" data-theme="d">
+		<div data-role="content" data-theme="d" id="face-div">
 			<!--
 			<img src="face/b/1.gif" tag="b/1" class="face-img">
 			<img src="face/b/2.gif" tag="b/2" class="face-img">
@@ -35,62 +34,59 @@
 			<img src="face/b/4.gif" tag="b/4" class="face-img">
 			-->
 		</div>
+		<div>
+			<button data-icon="back" onclick="$.mobile.changePage('#chat'); ">取消</button>
+		</div>
 	</div>
 		
 	<!-- 主界面 -->
 	<div id="chat" data-role="page" data-theme="d" data-fullscreen="true">
-		<div data-role="header" data-theme="d">
-			<!-- 发送消息区域 -->
-			<input id="message">
-			<div data-role="navbar" data-theme="d">
-				<ul>
-					<li><button data-icon="gear" onclick="$.mobile.changePage('#menu', 'pop')">操作</button></li>
-					<li><button data-icon="star" onclick="face.show()">表情</button></li>
-					<li><button data-icon="check" onclick="room.sendMessage()">发送</button></li>
-				</ul>
-			</div>
-		</div>
-	
 		<div data-role="content" data-theme="d">
 			<!-- 消息区域 -->
 			<div id="messages">
 				<div id="lines" class="scrollbar">
 					<div class="line">
 						<div class="message-header">
-							<span class="message-from">老雷</span>
-							<span class="message-timestamp">2011-12-31</span>
+							<span class="message-from">系统</span>
+							<span class="message-timestamp">Now</span>
 						</div>
 						<div class="message-text">
-							这个是消息内容
+							正在初始化
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		
+		<div data-role="footer" data-theme="d" id="sendbar">
+			<!-- 发送消息区域 -->
+			<div data-role="navbar" data-theme="d" style="padding-bottom: 0.8rem;">
+				<ul>
+					<li><button data-icon="gear" onclick="$.mobile.changePage('#menu', 'pop');">操作</button></li>
+					<li><button data-icon="star" onclick="face.show();">表情</button></li>
+					<li><button data-icon="check" onclick="room.sendMessage();">发送</button></li>
+				</ul>
+			</div>
+			<input id="message">
+		</div>
 	</div>
 	
 	<!-- 操作菜单 -->
 	<div id="menu" data-role="page" data-theme="d">
-		<div data-role="header" data-theme="d">
-			<button data-icon="back" onclick="$.mobile.changePage('#chat');">取消</button>
-		</div>
-		
 		<div data-role="content" data-role="d">
 			<div data-role="controlgroup">
-				<button data-icon="grid" onclick="room.clearMessage(); $.mobile.changePage('#chat');">清空消息</button>
-				<button data-icon="back" onclick="room.findPeople(); $.mobile.changePage('#chat');">换人</button>
-				<button data-icon="delete" onclick="room.closeChat(); $.mobile.changePage('#chat');">不和Ta聊</button>
-				<button data-icon="home" onclick="window.location = '/';">返回首页</button>
+				<button data-icon="back" data-iconpos="top" onclick="$.mobile.changePage('#chat'); ">取消</button>
+				<button data-icon="grid" data-iconpos="top" onclick="room.clearMessage(); $.mobile.changePage('#chat');">清空消息</button>
+				<button data-icon="back" data-iconpos="top" onclick="room.findPeople(); $.mobile.changePage('#chat');">换人</button>
+				<button data-icon="delete" data-iconpos="top" onclick="room.closeChat(); $.mobile.changePage('#chat');">不和Ta聊</button>
+				<button data-icon="home" data-iconpos="top" onclick="window.location = '/';">返回首页</button>
 			</div>
 		</div>
 	</div>
-</div>
+
 </body>
 </html>
-<script>
-// 
-</script>
+<script src="/mobile/face.js"></script>
 <script src="/mobile/room.js"></script>
 <script src="/mobile/room.op.js"></script>
 <script src="/mobile/room.event.js"></script>
-<script src="/mobile/face.js"></script>
