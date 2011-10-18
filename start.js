@@ -15,6 +15,7 @@ var mustache = require('mustache');
 web.set({
 	'template_path':			'./html',				// 模板目录
 	'session_cookie_maxage':	3600 * 24 * 7,			// Session的Cookie存储时间
+	'file_maxage':				3600 * 24 * 30,			// 静态文件缓存1个月
 	'render_to_html':			function (str, view) {		// 模板引擎
 		return mustache.to_html(str, view);
 	}

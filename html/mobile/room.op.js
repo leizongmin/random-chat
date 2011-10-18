@@ -10,7 +10,10 @@ if (typeof room != 'object')
 /** 发送消息 */
 room.sendMessage = function () {
 	var msg = $('#message').val().trim();
-	room.sendPrivateMessage(msg);
+	if (msg == '')
+		console.log('请输入消息内容！');
+	else
+		room.sendPrivateMessage(msg);
 }
 /** 发送私人信息 */
 room.sendPrivateMessage = function (msg) {

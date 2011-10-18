@@ -10,6 +10,8 @@ $(function () {
 		var nickname = $('#nickname').val().trim();					// 昵称
 		var say = $('#say').val().trim();								// 打招呼内容
 		var sex = $('.select-sex .selected').attr('title').trim();	// 性别
-		window.location = '/mobile?n=' + nickname + '&s=' + sex + '&say=' + say;
+		if (say == '')
+			say = '嘿，你好哇！';
+		window.location = encodeURI('/mobile?n=' + nickname + '&s=' + sex + '&say=' + say);
 	});
 });
